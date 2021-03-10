@@ -8,8 +8,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Pairwise {
-
-
     // Write a method that computes a (small, but not necessarily
     // minimal) list of tuples that satisfy "Pair-wise" coverage for a
     // given list of partitions.
@@ -128,6 +126,8 @@ public class Pairwise {
     //   java Pairwise A B C , 1 2 3 , x y
     //   java Pairwise -1 0 1 , -1 0 1
     //   java Pairwise + - , low high , MIN 0 MAX
+    //   java Pairwise Buy Sell , Delhi Mumbai , BMW Audi Mercedes , Valid
+    //   Invalid , E-booking In-store , Wh Nwh
     public static void main(String[] args) {
         Set<List<String>> partitions = new HashSet<List<String>>();
         List<String> blocks = new LinkedList<String>();
@@ -146,8 +146,8 @@ public class Pairwise {
         Set<List<String>> allCombiResult = allCombinations(partitions);
         System.out.println(result.size());
         System.out.println(allCombiResult.size());
-//        for (List<String> tuple : result) {
-//            System.out.println(tuple);
-//        }
+        for (List<String> tuple : result) {
+            System.out.println(tuple);
+        }
     }
 }
