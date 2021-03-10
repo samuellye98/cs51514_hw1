@@ -1,0 +1,38 @@
+
+w
+java:S2293„"YReplace the type specification in this constructor call with the diamond operator ("<>").(â°íµ8—»¼Õ/
+v
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(¬û±È8—»¼Õ/
+V	java:S106”"9Replace this use of System.out or System.err by a logger.(ÍØ´”8¡«ê×/
+Y	java:S125•"<This block of commented-out lines of code should be removed.(ı8¨ıç×/
+v
+java:S2293k"YReplace the type specification in this constructor call with the diamond operator ("<>").(Äá£Ñ8½Ç²Ö/
+v
+java:S2293!"YReplace the type specification in this constructor call with the diamond operator ("<>").(ß¸âú8¡êã×/
+]	java:S125:"<This block of commented-out lines of code should be removed.(÷¨‰âúÿÿÿÿ8Ï´ä×/
+V
+java:S21306"9Use "Integer.parseInt" for this string-to-int conversion.(¯˜õÔ8ûˆä×/
+w
+java:S2293‰"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ù¯œŒ8½Ç²Ö/
+[	java:S106“"9Replace this use of System.out or System.err by a logger.(˜Ö“ñüÿÿÿÿ8 ê×/
+t
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(Ö’Îàıÿÿÿÿ8¶¦ÛÕ/
+X	java:S125"<This block of commented-out lines of code should be removed.(ßÔ¾8éÓ/
+[
+java:S1155-">Use isEmpty() to check whether the collection is empty or not.(ãŒ¾8¡êã×/
+v
+java:S2293F"YReplace the type specification in this constructor call with the diamond operator ("<>").(àŸ”‡8½Ç²Ö/
+v
+java:S2293Z"YReplace the type specification in this constructor call with the diamond operator ("<>").(§”Üô8½Ç²Ö/
+{
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(°²ìıÿÿÿÿ8—»¼Õ/
+{
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(“«Òÿùÿÿÿÿ8—»¼Õ/
+O
+java:S1135"2Complete the task associated to this TODO comment.(¤–Ñ¹8³ÉœÒ/
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¦é„¦úÿÿÿÿ
+V
+java:S21309"9Use "Integer.parseInt" for this string-to-int conversion.(ÛÍ‘«8Ï´ä×/
+|
+java:S2293…"YReplace the type specification in this constructor call with the diamond operator ("<>").(Òù¹­şÿÿÿÿ8½Ç²Ö/
+V	java:S106"9Replace this use of System.out or System.err by a logger.(Ê†´·8ª°í×/

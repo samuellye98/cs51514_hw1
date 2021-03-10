@@ -1,0 +1,72 @@
+(a) Completeness: Yes/No
+    Explanation: 
+
+    Disjointness: Yes/No
+    Explanation: 
+
+
+(b) Completeness: Yes/No
+    Explanation: 
+
+    Disjointness: Yes/No
+    Explanation: 
+
+
+(c) Identify the inputs: 
+    Input domain: 
+
+
+(d) "Type of s1": B1 = ...
+                  B2 = ...
+                  [add more blocks as needed]
+
+    "Relation between s1 and s2": R1 = ...
+                                  R2 = ...
+                                  [add more blocks as needed]
+
+
+(e) "Type of s2": C1 = ...
+                  C2 = ...
+                  [add more blocks as needed]
+
+    Partition  | B1 = [fill in block from part d] | B2 = ... | ...[add as many as needed]
+    -----------|----------------------------------|----------|----------------------------
+    Type of s1 | [fill in input...]               | ...      | ...
+
+
+    Partition  | C1 = [block from above]  | C2 = ... | ...
+    -----------|--------------------------|----------|-------------------------
+    Type of s2 | ...                      | ...      | ...
+
+
+    Partition                  | R1 = [block from part d] | R2 = ... | ...
+    ---------------------------|--------------------------|----------|-----
+    Relation between s1 and s2 | ...                      | ...      | ...
+
+
+(f) Constraints among "Type of s1", "Type of s2", and "Relationship between s1 and s2":
+    (e.g. To be in R1, s1 and s2 must be in B1 and C2.)
+
+
+(g) All Combinations              | Value of s1 | Value of s2
+    ------------------------------|-------------|-------------
+    (e.g. B1 C2 R1                | ...         | ...        )
+    ... [add more rows as needed] |             |
+
+
+(h) Each Choice, not Pairwise     | Value of s1 | Value of s2
+    ------------------------------|-------------|-------------
+    (e.g. B1 C2 R1                | ...         | ...        )
+    ... [add more rows as needed] |             |
+
+
+(i) Pairwise, not All Combinations| Value of s1 | Value of s2
+    ------------------------------|-------------|-------------
+    (e.g. B1 C2 R1                | ...         | ...        )
+    ... [add more rows as needed] |             |
+
+
+(j) 3-wise                        | Value of s1 | Value of s2
+    ------------------------------|-------------|-------------
+    (e.g. B1 C2 R1                | ...         | ...        )
+    ... [add more rows as needed] |             |

@@ -1,0 +1,21 @@
+(a) List all the input variables, including state variables: 
+    Inputs: 
+
+(b) Define characteristics of the input variables: 
+    Characteristics: 
+
+(c) Partition | B1 = [fill in block]   | B2 = ... | ...[add blocks as needed]
+    ----------|------------------------|----------|---------------------------
+    ...       | [fill in partition...] | ...      | ...
+
+    Partition | B1 = [fill in block]   | B2 = ... | ...[add blocks as needed]
+    ----------|------------------------|----------|---------------------------
+    ...       | [fill in partition...] | ...      | ...
+
+    Designated "Base" block for each partition: 
+
+(d) Define values for each block in (c)
+
+
+(e) Test set that satisfies BCC.
+
