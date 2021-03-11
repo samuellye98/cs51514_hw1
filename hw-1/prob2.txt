@@ -1,8 +1,17 @@
 (a) List all the input variables, including state variables: 
     Inputs: 
+The input variables are int capacity in the constructor and Object X in Enqueue.
+The state variables would be the queue of Objects itself and the number of elements currently in the queue, which is used for the methods IsEmpty, and IsFull.
 
 (b) Define characteristics of the input variables: 
     Characteristics: 
+int capacity:
+
+Object X:
+Non-null vs. null; 
+
+Some example characteristics are whether queue is empty or full, what the current size is, what cap is, and whether there are special values (such as null) in the queue. 
+In the constructor, capacity can clearly have ‘illegal’ values. It is not clear whether cap can also have such values; hence this makes a good test characteristic.
 
 (c) Partition | B1 = [fill in block]   | B2 = ... | ...[add blocks as needed]
     ----------|------------------------|----------|---------------------------

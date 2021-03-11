@@ -12,6 +12,10 @@ public class Pairwise {
     // minimal) list of tuples that satisfy "Pair-wise" coverage for a
     // given list of partitions.
     public static Set<List<String>> pairwise(Set<List<String>> partitions) {
+        if (partitions.size() <= 1) {
+            return new HashSet<>();
+        }
+
         // [TODO] You should write your code starting from here.
         HashSet<List<String>> res = new HashSet<List<String>>();
         Set<List<String>> allPossiblePairs =
@@ -120,6 +124,56 @@ public class Pairwise {
         return result;
     }
 
+    // Returns true if testCases fulfills pairwise coverage over partitions
+    public static boolean isPairwiseCoverage(Set<List<String>> partitions,
+                                     Set<List<String>> testCases) {
+        // base cases
+        if (partitions.size() <= 1) {
+            return true;
+        }
+        if (testCases.size() == 0) {
+            return false;
+        }
+
+        // Generate all possible pairs
+        // {[charA, charB], ...}
+        Set<List<String>> allPossiblePairs =
+                new HashSet<List<String>>();
+        List<List<String>> pairwiseLst =
+                new ArrayList<List<String>>(partitions);
+        for (int i = 0; i < pairwiseLst.size() - 1; i++) {
+            for (int j = i+1; j < pairwiseLst.size(); j++) {
+                for (String charA : pairwiseLst.get(i)) {
+                    for (String charB :
+                            pairwiseLst.get(j)) {
+                        List<String> temp =
+                                new ArrayList<String>();
+                        temp.add(charA);
+                        temp.add(charB);
+                        allPossiblePairs.add(temp);
+                    }
+                }
+            }
+        }
+
+        // NP-Complete -> remove pairs found in testCases
+        for (List<String> testCase : testCases) {
+            for (int i = 0; i < testCase.size() - 1; i++) {
+                for (int j = i+1; j < testCase.size(); j++) {
+                    List<String> temp =
+                            new ArrayList<String>();
+                    temp.add(testCase.get(i));
+                    temp.add(testCase.get(j));
+                    if (allPossiblePairs.contains(temp)) {
+                        allPossiblePairs.remove(temp);
+                    }
+                }
+            }
+        }
+
+        return allPossiblePairs.size() == 0;
+    }
+
     // A main function for running Pairwise.
     // Partitions are separated with commas, and each block has one string.
     // Example calls:
@@ -139,8 +193,8 @@ public class Pairwise {
                 blocks.add(args[i]);
             }
         }
-        System.out.println(partitions);
         partitions.add(blocks);
+        System.out.println(partitions);
         Set<List<String>> result = pairwise(partitions);
         // Uncomment the next line to see how "allCombinations" work.
         Set<List<String>> allCombiResult = allCombinations(partitions);
