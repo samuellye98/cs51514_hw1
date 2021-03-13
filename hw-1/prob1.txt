@@ -1,19 +1,19 @@
-(a) Completeness: Yes/No
-    Explanation: 
+(a) Completeness: Yes
+    Explanation: The three blocks of "Type of S1" cover the domain D, that is the set S1. This is because the blocks null, {}, and at least one element cover all the possibilities of the input S1. 
 
-    Disjointness: Yes/No
-    Explanation: 
+    Disjointness: Yes
+    Explanation: The three blocks of "Type of S1" are pairwise disjoint, that is they have nothing in common. If S1 is null, it cannot be {} or contain at least one element. If S1 is {}, it cannot be null and it does not contain at least one element. Finally, if S1 contains at least one element, it cannot be null or be {}.
 
 
-(b) Completeness: Yes/No
-    Explanation: 
-
-    Disjointness: Yes/No
-    Explanation: 
+(b) Completeness: No
+    Explanation: There are additional blocks that the partition does not cover, for example if s1 and s2 share a few elements in common but not all - it does not fall into any block. An example is s1 = {1, 2, 3, 4} and s2 = {1, 2, 5, 6}.
+    Disjointness: No
+    Explanation: The blocks in the partition are not pairwise disjoint. For example, if block 1 is fulfilled, then block 2 and 3 are also fulfilled - this is because if s1 and s2 are the same sets, they are considered subsets of each other as well. An example would be s1 = {1, 2, 3, 4} and s2 = {1, 2, 3, 4}, which fulfils the first 3 blocks. Another example is s1 = {}, s2 = {}, which fulfils all 4 blocks. 
 
 
 (c) Identify the inputs: 
     Input domain: 
+    s1 and s2 are the inputs and are both sets. 
 
 
 (d) "Type of s1": B1 = ...
