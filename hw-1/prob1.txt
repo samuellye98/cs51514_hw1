@@ -16,32 +16,33 @@
     s1 and s2 are the inputs and are both sets. 
 
 
-(d) "Type of s1": B1 = ...
-                  B2 = ...
-                  [add more blocks as needed]
+(d) "Type of s1": B1 = null
+                  B2 = {}
+                  B3 = s1 has at least one element
 
-    "Relation between s1 and s2": R1 = ...
-                                  R2 = ...
-                                  [add more blocks as needed]
+    "Relation between s1 and s2": R1 = s1 and s2 share no common elements
+                                  R2 = s1 and s2 represent the same set
+                                  R3 = s1 and s2 share some common elements, but not all
 
+(e) "Type of s2": C1 = null
+                  C2 = {}
+                  C3 = s2 has at least one element
 
-(e) "Type of s2": C1 = ...
-                  C2 = ...
-                  [add more blocks as needed]
-
-    Partition  | B1 = [fill in block from part d] | B2 = ... | ...[add as many as needed]
-    -----------|----------------------------------|----------|----------------------------
-    Type of s1 | [fill in input...]               | ...      | ...
-
-
-    Partition  | C1 = [block from above]  | C2 = ... | ...
-    -----------|--------------------------|----------|-------------------------
-    Type of s2 | ...                      | ...      | ...
+    Partition  | B1 = null | B2 = {} | B3 = s1 has at least one element (Base)
+    -----------|---------- |---------|----------------------------------------
+    Type of s1 |   null    |    {}   |   {1, 2}   
 
 
-    Partition                  | R1 = [block from part d] | R2 = ... | ...
-    ---------------------------|--------------------------|----------|-----
-    Relation between s1 and s2 | ...                      | ...      | ...
+    Partition  | C1 = null | C2 = {} | C3 = s1 has at least one element (Base)
+    -----------|---------- |---------|----------------------------------------
+    Type of s2 |   null    |    {}   |   {1, 2}   
+
+
+    Partition                  | R1 = share no common elements | R2 = represent the same set | R3 = share some common elements
+    ---------------------------|-------------------------------|-----------------------------|---------------------------------
+    Relation between s1 and s2 | s1={}, s2={};                 | s1={1,2}, s2={1,2}          | s1={1,2,3,4}, s2={1,2,5,6} 
+                                 s1={}, s2={1, 2}; 
+                                 s1={1, 2}, s2={3, 4}                     
 
 
 (f) Constraints among "Type of s1", "Type of s2", and "Relationship between s1 and s2":

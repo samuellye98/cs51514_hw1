@@ -16,7 +16,7 @@
 
     C: value of C, e.g. < 0 (illegal), 0 (illegal), 1, > 1
 
-(c) Partition         | B1 = negative   | B2 = zero | B3 = one | B4 = positive (Base)
+(c) Partition         | A1 = negative   | A2 = zero | A3 = one | A4 = positive (Base)
     ------------------|-----------------|-----------|----------|---------------------
     Value of capacity | < 0             | 0         |     1    |  > 1
 
@@ -24,19 +24,19 @@
     -----------|-----------|---------------------
     Is X null? |    true   |       false
 
-    Partition     | B1 = []  | B2 = [X] | B3 = [X, ...] (Base)
+    Partition     | C1 = []  | C2 = [X] | C3 = [X, ...] (Base)
     --------------|----------|----------|----------------------
     Size of queue | 0        | 1        | > 1
 
-    Partition       | B1 = full  | B2 = not full (Base) 
+    Partition       | D1 = full  | D2 = not full (Base) 
     ----------------|------------|---------------------
     Is queue full?  |    true    |       false   
 
-    Partition       | B1 = empty   | B2 = not empty (Base) 
+    Partition       | E1 = empty   | E2 = not empty (Base) 
     ----------------|--------------|----------------------
     Is queue empty? |     true     |       false   
 
-    Partition  | B1 = negative   | B2 = zero | B3 = one | B4 = positive (Base)
+    Partition  | F1 = negative   | F2 = zero | F3 = one | F4 = positive (Base)
     -----------|-----------------|-----------|----------|---------------------
     Value of C | < 0             | 0         |     1    |  > 1
 
@@ -45,59 +45,60 @@
 (d) Define values for each block in (c)
 
     Value of capacity
-    B1: capacity = -1
-    B2: capacity = 0
-    B3: capacity = 1
-    B4: capacity = 3
+    A1: capacity = -1
+    A2: capacity = 0
+    A3: capacity = 1
+    A4: capacity = 3
 
     Is X null?
     B1: X = null
-    B2: X = 50
+    B2: X = 70
 
     Size of queue
-    B1: queue = []
-    B2: queue = [X]
-    B3: queue = [X1, X2]
+    C1: queue = []
+    C2: queue = [50]
+    C3: queue = [50, 60]
 
     Is queue full?
-    B1: queue = [X1, X2, X3], C = 3
-    B2: queue = [X1, X2], C = 3
+    D1: queue = [50, 60, 70], C = 3
+    D2: queue = [50, 60], C = 3
 
     Is queue empty?
-    B1: queue = []
-    B2: queue = [X1, X2]
+    E1: queue = []
+    E2: queue = [50, 60]
 
     Value of C
-    B1: C = -1
-    B2: C = 0
-    B3: C = 1
-    B4: C = 3
+    F1: C = -1
+    F2: C = 0
+    F3: C = 1
+    F4: C = 3
 
 (e) Test set that satisfies BCC.
 
-    Let the characteristics be represented as follows:
-    - Value of capacity: A
-    - Is X null?: B
-    - Size of queue: C
-    - Is queue full?: D
-    - Is queue empty?: E
-    - Value of C: F
+    Consider the test method "public void enQueue(Object X)" for the test set below.
 
-    Base case = (A4, B2, C3, D2, E2, F4): (capacity=2, X not null, queue=[50, 60], queue not full, queue not empty, C=3)
+    Base case = (A4, B2, C3, D2, E2, F4): (capacity=2, X=70, queue=[50, 60], queue not full, queue not empty, C=3) 
+    // Test Oracle: enQueue successful, queue size now 3 and queue is full
 
     Test cases for A and F: Note that for the values of A and F being <= 0, i.e. (A1, B2, C3, D2, E2, F1) and (A2, B2, C3, D2, E2, F2), this is not possible since if we have a queue with capacity <= 0, then the queue should not contain any elements. With the other values of capacity, this affects the base cases for characteristics C, D, and E. For example, when capacity = 1 and C = 1, the size of the queue also has to change since it cannot be more than 1, thus we have to use C2 instead of C3. We also have to change either the block for characteristic D or E since with a capacity of 1, the queue can only be either empty or full at the same time. 
 
-    (A3, B2, C2, D1, E2, F3): (capacity=1, X=50, queue=[50], queue full, queue, queue not empty, C=1)
+    (A3, B2, C2, D1, E2, F3): (capacity=1, X=70, queue=[50], queue full, queue not empty, C=1)
+    // Test Oracle: enQueue unsuccessful, queue size still 1 and queue is full
 
     Test cases for B:
-    (A4, B1, C3, D2, E2, F4): (capacity=3, X=null, queue=[null, null], queue not full, queue not empty, C=3)
+    (A4, B1, C3, D2, E2, F4): (capacity=3, X=null, queue=[50, 60], queue not full, queue not empty, C=3)
+    // Test Oracle: enQueue successful, queue size now 3 and queue is full
 
     Test cases for C: Note that if size of queue is 0, the queue is empty, thus we must change the block for characteristic E from E2 to E1. 
-    (A4, B2, C1, D2, E1, F4): (capacity=3, X not null, queue=[], queue not full, queue empty, C=3) 
-    (A4, B2, C2, D2, E2, F4): (capacity=3, X not null, queue=[50], queue not full, queue not empty, C=3) 
+    (A4, B2, C1, D2, E1, F4): (capacity=3, X=70, queue=[], queue not full, queue empty, C=3) 
+    // Test Oracle: enQueue successful, queue size now 1 and queue is not full
+    (A4, B2, C2, D2, E2, F4): (capacity=3, X=70, queue=[50], queue not full, queue not empty, C=3) 
+    // Test Oracle: enQueue successful, queue size now 2 and queue is not full
 
     Test cases for D:
-    (A4, B2, C3, D1, E2, F4): (capacity=3, X not null, queue=[50, 60, 70], queue full, queue not empty, C=3)
+    (A4, B2, C3, D1, E2, F4): (capacity=3, X=70, queue=[50, 60, 70], queue full, queue not empty, C=3)
+    // Test Oracle: enQueue unsuccessful, queue size still 3 and queue is full
 
     Test cases for E: Note that if queue is empty, the size of the queue is 0, then we must change block for characteristic C from C3 to C1.
-    (A4, B2, C1, D2, E1, F4): (capacity=2, X not null, queue=[], queue not full, queue empty, C=3)
+    (A4, B2, C1, D2, E1, F4): (capacity=2, X=70, queue=[], queue not full, queue empty, C=3)
+    // Test Oracle: enQueue successful, queue size now 1 and queue is not full
